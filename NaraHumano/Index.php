@@ -137,6 +137,7 @@ echo "<h1> Ejercicios </h1>"
                     $apellido = isset($_GET["apellido"]) ? $_GET["apellido"] : "";
                     $saludo = new Saludo($nombre, $apellido);
                    echo "<h1> ¡" . $saludo->saludoFormal($fecha) . "! </h1>";
+                   echo "<h1> " . $saludo->saludoInformal($fecha) . "</h1>";
                 ?>
             </form>
         </article>

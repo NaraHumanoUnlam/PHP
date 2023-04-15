@@ -24,8 +24,25 @@
             return $saludo;
         }
 
+
+
         function saludoFormal($fecha) {
             return $this->saludo($fecha) . " " . $this->nombre . " " . $this->apellido;
+        }
+
+        function saludoInformal($fecha){
+
+            $saludo = "";
+            if($fecha >= "05:00:00" && $fecha < "13:00:00") {
+
+                $saludo = "¡Hola ". $this->nombre . "!". " Que tengas buen día ";
+            }elseif ($fecha >= "13:00:00" && $fecha < "21:00:00"){
+                $saludo = "¡Hola ". $this->nombre . "!". " Que tengas buenas tardes ";
+            } else {
+                $saludo = "¡Hola ". $this->nombre . "!". " Que tengas buenas noches ";
+            }
+
+            return $saludo;
         }
     }
 
