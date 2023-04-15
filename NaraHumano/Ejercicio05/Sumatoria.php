@@ -1,7 +1,28 @@
 <?php
+
+function mostrar_vector($array){
+    echo " El vector es: [";
+    foreach ($array as $item){
+        echo  $item . " "  ;
+    }
+    echo "]";
+}
+function agregar_elemento($array, $elemento){
+    if($elemento > 0){
+        array_push($array, $elemento);
+    }
+
+
+    return $array;
+}
+function agregar_primer_elemento($elemento){
+    $array = [];
+    if($elemento > -999999){
+        array_push($array, $elemento);
+    }
+    return $array;
+}
 function sumatoria_a( $array ) {
-
-
     $suma = 0;
     if(isset($array)){
         $count = count($array);
@@ -10,8 +31,6 @@ function sumatoria_a( $array ) {
 
         }
     }
-
-
   return $suma;
 }
 

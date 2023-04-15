@@ -95,20 +95,52 @@ echo "<h1> Ejercicios </h1>"
     <section class="ejercicio05">
         <h1>Ejercicio 5: Sumatoria </h1>
         <article>
-            <form action="Index.php" method="get" enctype="application/x-www-form-urlencoded">
-                <input type="submit" value="Ver Resultado">
+            <form action="Index.php" method="post" enctype="application/x-www-form-urlencoded">
+                <label for="elemento">Ingrese los numeros en estos casilleros: </label><br>
+                <input type="number" id="elemento1" name="number1">
+                <input type="number" id="elemento2" name="number2">
+                <input type="number" id="elemento3" name="number3">
+                <button type="submit" >Ver sumatorias</button>
                 <?php
-                include_once('Ejercicio05/Sumatoria.php');
-                $valor = [1,2,3,4,5,6];
-                $resultado_a = sumatoria_a($valor);
-                $resultado_b = sumatoria_b($valor);
-                $resultado_c = sumatoria_c($valor);
-                echo "<br><br> Resultado Función A: <span>$resultado_a </span>";
-                echo "<br><br> Resultado Función B: <span>$resultado_b </span>";
-                echo "<br><br> Resultado Función C: <span>$resultado_c </span>";
+                    include_once('Ejercicio05/Sumatoria.php');
+                    $elemento1 = isset($_POST["number1"]) ? $_POST["number1"] : 0;
+                    $miArray = agregar_primer_elemento($elemento1);
+                    $elemento2 = isset($_POST["number2"]) ? $_POST["number2"] : 0;
+                    $miArray = agregar_elemento($miArray, $elemento2);
+                    $elemento3 = isset($_POST["number3"]) ? $_POST["number3"] : 0;
+                    $miArray = agregar_elemento($miArray, $elemento3);
+                    mostrar_vector($miArray);
+                    $resultado_a = sumatoria_a($miArray);
+                    $resultado_b = sumatoria_b($miArray);
+                    $resultado_c = sumatoria_c($miArray);
+                    echo "<br><br> Resultado Función A: <span>$resultado_a </span>";
+                    echo "<br><br> Resultado Función B: <span>$resultado_b </span>";
+                    echo "<br><br> Resultado Función C: <span>$resultado_c </span>";
                 ?>
             </form>
         </article>
     </section>
+    <section class="ejercicio06">
+        <h1>Ejercicio 6: Nombre Completo </h1>
+        <article>
+            <form action="Index.php" method="get" enctype="application/x-www-form-urlencoded">
+                <label for="nombre"> Nombre: </label>
+                <input type="text" name="nombre" id="nombre">
+                <label for="apellido"> Apellido: </label>
+                <input type="text" name="apellido" id="apellido">
+                <input type="submit" value="Enviar">
+                <?php
+                include_once('Ejercicio06/NombreCompleto.php');
+                date_default_timezone_set('America/Argentina/Buenos_Aires');
+                    $fecha = date("H:i:s");
+                    $nombre = isset($_GET["nombre"]) ? $_GET["nombre"] : "";
+                    $apellido = isset($_GET["apellido"]) ? $_GET["apellido"] : "";
+                    $saludo = new Saludo($nombre, $apellido);
+                   echo "<h1> ¡" . $saludo->saludoFormal($fecha) . "! </h1>";
+                ?>
+            </form>
+        </article>
+    </section>
+
 </body>
 </html>
