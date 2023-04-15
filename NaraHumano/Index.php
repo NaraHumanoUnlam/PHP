@@ -1,6 +1,5 @@
 <?php
-//ejecicio 01 - Semaforo
-echo "<h1> Ejercicios </h1>"
+echo "<h1>Nara Humano</h1>"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +7,7 @@ echo "<h1> Ejercicios </h1>"
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
+    <title>Nara Humano</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
