@@ -1,0 +1,35 @@
+body {
+    color: green;
+}
+.menu {
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+}
+
+.menu li {
+    margin: 10px;
+    font-family: "Roboto Light";
+    font-size: large;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: aquamarine;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}

@@ -21,7 +21,7 @@ echo "<h1>Nara Humano</h1>"
                 <input type="submit" value="Enviar">
             </form>
             <?php
-                include_once('Ejercicio01/Semaforo.php');
+                include_once('../Ejercicio01/Semaforo.php');
                 $color = isset($_GET['color']) ? strtolower($_GET["color"]) : "";
                 $valorb = semaforo_b($color);
                 $semaforoA = semaforo_a($color);
@@ -42,7 +42,7 @@ echo "<h1>Nara Humano</h1>"
                 <input type="number" name="numero_b" id="valorB">
                 <input type="submit" value="Enviar">
                 <?php
-                    include_once('Ejercicio02/BinomioCuadradoPerfecto.php');
+                    include_once('../Ejercicio02/BinomioCuadradoPerfecto.php');
                     $valora = isset($_GET['numero_a']) ? $_GET['numero_a'] : "";
                     $valorb = isset($_GET['numero_b']) ? $_GET['numero_b'] : "";
                     $resultadoA = binomio_cuadrado_perfecto_a($valora, $valorb);
@@ -63,7 +63,7 @@ echo "<h1>Nara Humano</h1>"
                 <input type="text" name="texto_b" id="valorB">
                 <input type="submit" value="Enviar">
                 <?php
-                include_once('Ejercicio03/ConcatenarTexto.php');
+                include_once('../Ejercicio03/ConcatenarTexto.php');
                 $valora = isset($_GET['texto_a']) ? strtolower($_GET["texto_a"]) : "";
                 $valorb = isset($_GET['texto_b']) ? strtolower($_GET["texto_b"]) : "";
                 $resultado = concatenar_2_textos($valora, $valorb);
@@ -82,7 +82,7 @@ echo "<h1>Nara Humano</h1>"
                 <input type="number" name="numero" id="valor">
                 <input type="submit" value="Enviar">
                 <?php
-                include_once('Ejercicio04/Incrementar.php');
+                include_once('../Ejercicio04/Incrementar.php');
                 $valora = isset($_GET['numero']) ? $_GET['numero'] : "";
                 echo "<br><br>";
                 incrementar_valor($valora);
@@ -101,7 +101,7 @@ echo "<h1>Nara Humano</h1>"
                 <input type="number" id="elemento3" name="number3">
                 <button type="submit" >Ver sumatorias</button>
                 <?php
-                    include_once('Ejercicio05/Sumatoria.php');
+                    include_once('../Ejercicio05/Sumatoria.php');
                     $elemento1 = isset($_POST["number1"]) ? $_POST["number1"] : 0;
                     $miArray = agregar_primer_elemento($elemento1);
                     $elemento2 = isset($_POST["number2"]) ? $_POST["number2"] : 0;
@@ -129,7 +129,7 @@ echo "<h1>Nara Humano</h1>"
                 <input type="text" name="apellido" id="apellido">
                 <input type="submit" value="Enviar">
                 <?php
-                include_once('Ejercicio06/NombreCompleto.php');
+                include_once('../Ejercicio06/NombreCompleto.php');
                 date_default_timezone_set('America/Argentina/Buenos_Aires');
                     $fecha = date("H:i:s");
                     $nombre = isset($_GET["nombre"]) ? $_GET["nombre"] : "";
