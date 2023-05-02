@@ -1,5 +1,4 @@
 body {
-    color: green;
 }
 .menu {
     margin:0;
@@ -21,6 +20,7 @@ body {
 
 .menu a {
     text-decoration: none;
+    color: white;
 }
 
 .menu a:hover {
@@ -32,4 +32,71 @@ body {
     justify-content: center;
     align-content: center;
     align-items: center;
+    background: linear-gradient(blue, pink);
+}
+
+
+
+.btn-send {
+    background: green;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-send:hover {
+    background: crimson;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]
+{
+    -moz-appearance: textfield;
+    height: 30px;
+    width: 30px;
+}
+
+input[type=text]
+{
+    -moz-appearance: textfield;
+    height: 30px;
+}
+
+.resolucion {
+    text-align: center;
+}
+.foto {
+    background: crimson;
+    color: white;
+    padding: 10px;
+    font-size: larger;
+    width: 500px;
+    margin: auto;
+    margin-top: 20px;
+
+}
+
+.foto img {
+    padding: 10px;
+    margin: auto;
+    margin-top: 10px;
+    width: 450px;
+    height: auto;
+}
+
+.tablita {
+    margin: auto!important;
+}
+
+span {
+    color: darkgreen;
+    font-size: x-large;
 }

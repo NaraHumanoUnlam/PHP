@@ -14,7 +14,7 @@
         <ul class="menu">
             <li><a href="../Ejercicio01/index.php">Ejercicio01</a></li>
             <li><a href="../Ejercicio02/index.php">Ejercicio02</a></li>
-            <li><a href="index.php">Ejercicio03</a></li>
+            <li><a href="../Ejercicio03/index.php">Ejercicio03</a></li>
             <li><a href="../Ejercicio04/index.php">Ejercicio04</a></li>
             <li><a href="../Ejercicio05/index.php">Ejercicio05</a></li>
             <li><a href="../Ejercicio06/index.php">Ejercicio06</a></li>
@@ -25,7 +25,7 @@
         </ul>
         <ul class="menu">
             <li><a href="../Ejercicio11/index.php">Ejercicio11</a></li>
-            <li><a href="../Ejercicio12/index.php">Ejercicio12</a></li>
+            <li><a href="index.php">Ejercicio12</a></li>
             <li><a href="../Ejercicio13/index.php">Ejercicio13</a></li>
             <li><a href="../Ejercicio14/index.php">Ejercicio14</a></li>
             <li><a href="../Ejercicio15/index.php">Ejercicio15</a></li>
@@ -38,35 +38,18 @@
     </nav>
 </header>
 <main>
-    <section class="ejercicio03">
-        <h1>Ejercicio 3: Concatenar textos</h1>
-        <h2>Consigna</h2>
-        <p>Cree una función concatenar($texto1, $texto2) que reciba dos textos como parámetro y devuelva
-            ambos textos concatenados como uno solo.
-        </p>
+    <section class="ejercicio12">
         <div class="resolucion">
             <h3>Resolución</h3>
-        <article>
-            <form action="Index.php" method="get" enctype="application/x-www-form-urlencoded">
-                <label for="valorA">Primer Cadena: </label>
-                <input type="text" name="texto_a" id="valorA">
-                <label for="valorB">Segundo Cadena: </label>
-                <input type="text" name="texto_b" id="valorB">
-                <input type="submit" value="Enviar" class="btn-send">
+            <article>
+                <h3>Lista de visitantes</h3>
                 <?php
-                include_once('ConcatenarTexto.php');
-                $valora = isset($_GET['texto_a']) ? strtolower($_GET["texto_a"]) : "";
-                $valorb = isset($_GET['texto_b']) ? strtolower($_GET["texto_b"]) : "";
-                $resultado = concatenar_2_textos($valora, $valorb);
-
-                echo "<br><br> Resultado: <span>$resultado </span>";
-
+                include_once('../Ejercicio12/ControlInterplanetario.php');
+               listarVisitante();
                 ?>
-            </form>
-        </article>
+            </article>
         </div>
     </section>
 </main>
 </body>
 </html>
-

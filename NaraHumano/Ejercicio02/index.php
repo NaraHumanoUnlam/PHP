@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nara Humano</title>
+    <title>Nara Esther Humano</title>
     <link rel="stylesheet" href="../Ejercicio08/estilosEjercicio08.css">
 </head>
 <body>
 <header>
+    <h1>Nara Esther Humano</h1>
     <nav class="container">
         <ul class="menu">
             <li><a href="../Ejercicio01/index.php">Ejercicio01</a></li>
@@ -37,8 +38,18 @@
     </nav>
 </header>
 <main>
-    <section class="resolucion">
-        <h1>Solución Ejercio 02</h1>
+    <section class="ejercicio02">
+        <h1>Ejercicio 2: Binomio cuadrado perfecto </h1>
+        <h2>Consigna</h2>
+        <p>Cree una función llamada binomioCuadradoPerfecto que realice la ecuación de dicha problemática:
+            recibe dos parámetros y devuelve el cuadrado de la suma de ambos (a+b)^2
+           <br> a) función binomioCuadradoPerfecto_a($a, $b): Resuelva la solución utilizando la función de
+            potencia
+           <br> b) función binomioCuadradoPerfecto_b($a, $b): Resuelva la solución utilizando la fórmula
+            desarrollada del binomio: a^2 + 2*a*b + b^2
+        </p>
+        <div class="resolucion">
+            <h3>Resolución</h3>
         <article>
             <form action="Index.php" method="get" enctype="application/x-www-form-urlencoded">
                 <label for="valorA">Primer Numero: </label>
@@ -52,11 +63,12 @@
                 $valorb = isset($_GET['numero_b']) ? $_GET['numero_b'] : "";
                 $resultadoA = binomio_cuadrado_perfecto_a($valora, $valorb);
                 $resultadoB = binomio_cuadrado_perfecto_b($valora, $valorb);
-                echo " <br><br> Primer Función Resultado <span>  $resultadoA </span>";
-                echo " <br> Segunda Función Resultado <span>  $resultadoB </span>";
+                echo " <br><br> Primer Función Resultado: <span>  $resultadoA </span>";
+                echo " <br> Segunda Función Resultado: <span>  $resultadoB </span>";
                 ?>
             </form>
         </article>
+        </div>
     </section>
 </main>
 </body>

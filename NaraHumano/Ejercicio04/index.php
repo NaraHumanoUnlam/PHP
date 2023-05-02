@@ -12,10 +12,10 @@
     <h1>Nara Esther Humano</h1>
     <nav class="container">
         <ul class="menu">
-            <li><a href="../Ejercicio01/index.php">Ejercicio01</a></li>
+            <li><a href="index.php">Ejercicio01</a></li>
             <li><a href="../Ejercicio02/index.php">Ejercicio02</a></li>
-            <li><a href="index.php">Ejercicio03</a></li>
-            <li><a href="../Ejercicio04/index.php">Ejercicio04</a></li>
+            <li><a href="../Ejercicio03/index.php">Ejercicio03</a></li>
+            <li><a href="index.php">Ejercicio04</a></li>
             <li><a href="../Ejercicio05/index.php">Ejercicio05</a></li>
             <li><a href="../Ejercicio06/index.php">Ejercicio06</a></li>
             <li><a href="../Ejercicio07/index.php">Ejercicio07</a></li>
@@ -38,35 +38,30 @@
     </nav>
 </header>
 <main>
-    <section class="ejercicio03">
-        <h1>Ejercicio 3: Concatenar textos</h1>
-        <h2>Consigna</h2>
-        <p>Cree una función concatenar($texto1, $texto2) que reciba dos textos como parámetro y devuelva
-            ambos textos concatenados como uno solo.
-        </p>
+    <section class="ejercicio04">
+    <h1>Ejercicio 4: Incrementar </h1>
+    <h2>Consigna</h2>
+    <p>Cree una función llamada incrementar, que reciba una variable y sin devolver nada como retorno de
+        la función, el valor del parámetro haya sido incrementado en 1
+        (Ver pasaje de parámetros por referencia)
+    </p>
         <div class="resolucion">
             <h3>Resolución</h3>
-        <article>
-            <form action="Index.php" method="get" enctype="application/x-www-form-urlencoded">
-                <label for="valorA">Primer Cadena: </label>
-                <input type="text" name="texto_a" id="valorA">
-                <label for="valorB">Segundo Cadena: </label>
-                <input type="text" name="texto_b" id="valorB">
-                <input type="submit" value="Enviar" class="btn-send">
-                <?php
-                include_once('ConcatenarTexto.php');
-                $valora = isset($_GET['texto_a']) ? strtolower($_GET["texto_a"]) : "";
-                $valorb = isset($_GET['texto_b']) ? strtolower($_GET["texto_b"]) : "";
-                $resultado = concatenar_2_textos($valora, $valorb);
-
-                echo "<br><br> Resultado: <span>$resultado </span>";
-
-                ?>
-            </form>
-        </article>
+            <article>
+                <form action="Index.php" method="get" enctype="application/x-www-form-urlencoded">
+                    <label for="valor"> Numero: </label>
+                    <input type="number" name="numero" id="valor">
+                    <input type="submit" value="Enviar" class="btn-send">
+                    <?php
+                    include_once('../Ejercicio04/Incrementar.php');
+                    $valora = isset($_GET['numero']) ? $_GET['numero'] : "";
+                    echo "<br><br>";
+                    incrementar_valor($valora);
+                    ?>
+                </form>
+            </article>
         </div>
-    </section>
+</section>
 </main>
 </body>
 </html>
-

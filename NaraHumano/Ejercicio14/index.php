@@ -14,7 +14,7 @@
         <ul class="menu">
             <li><a href="../Ejercicio01/index.php">Ejercicio01</a></li>
             <li><a href="../Ejercicio02/index.php">Ejercicio02</a></li>
-            <li><a href="index.php">Ejercicio03</a></li>
+            <li><a href="../Ejercicio03/index.php">Ejercicio03</a></li>
             <li><a href="../Ejercicio04/index.php">Ejercicio04</a></li>
             <li><a href="../Ejercicio05/index.php">Ejercicio05</a></li>
             <li><a href="../Ejercicio06/index.php">Ejercicio06</a></li>
@@ -27,7 +27,7 @@
             <li><a href="../Ejercicio11/index.php">Ejercicio11</a></li>
             <li><a href="../Ejercicio12/index.php">Ejercicio12</a></li>
             <li><a href="../Ejercicio13/index.php">Ejercicio13</a></li>
-            <li><a href="../Ejercicio14/index.php">Ejercicio14</a></li>
+            <li><a href="index.php">Ejercicio14</a></li>
             <li><a href="../Ejercicio15/index.php">Ejercicio15</a></li>
             <li><a href="../Ejercicio16/index.php">Ejercicio16</a></li>
             <li><a href="../Ejercicio17/index.php">Ejercicio17</a></li>
@@ -38,35 +38,44 @@
     </nav>
 </header>
 <main>
-    <section class="ejercicio03">
-        <h1>Ejercicio 3: Concatenar textos</h1>
+    <section class="ejercicio14">
+        <h1>Ejercicio 14:  La Matrix… digo, Matriz</h1>
         <h2>Consigna</h2>
-        <p>Cree una función concatenar($texto1, $texto2) que reciba dos textos como parámetro y devuelva
-            ambos textos concatenados como uno solo.
+        <p>Solicite mediante un formulario, la dimensión de una matriz cuadrada.
+            En la siguiente página, cree esa matriz de NxN y realice las siguientes acciones:
+            <br>a) Recorrer la matriz con un sólo FOR y mostrar en pantalla los valores que componen la
+            diagonal principal (10,12,23,etc)
+            <br>b) Recorrer la matriz con un sólo FOR y mostrar en pantalla los valores que componen la
+            diagonal secundaria (10,19,28,etc)
+            <br>c) Recorra la matriz (Ahora si con 2 for) y sume todos los valores que contiene. Muestre el
+            resultado
+            <br> <span>Tip</span>: En los pasos a y b, no utilice un while, ni un flag, sólo con el contador del for debe alcanzar.
+            Analice las posiciones de la matriz que componen las diagonales ;)
         </p>
         <div class="resolucion">
             <h3>Resolución</h3>
-        <article>
-            <form action="Index.php" method="get" enctype="application/x-www-form-urlencoded">
-                <label for="valorA">Primer Cadena: </label>
-                <input type="text" name="texto_a" id="valorA">
-                <label for="valorB">Segundo Cadena: </label>
-                <input type="text" name="texto_b" id="valorB">
-                <input type="submit" value="Enviar" class="btn-send">
+            <article>
+                <h3>Dimensión de Matriz</h3>
+                <form action="index.php" method="post" enctype="application/x-www-form-urlencoded">
+                    <label for="numero"> Dimension de matriz: </label>
+                    <input type="number" name="numero" id="numero">
+                    <input type="submit" value="Crear" class="btn-send">
+                </form>
                 <?php
-                include_once('ConcatenarTexto.php');
-                $valora = isset($_GET['texto_a']) ? strtolower($_GET["texto_a"]) : "";
-                $valorb = isset($_GET['texto_b']) ? strtolower($_GET["texto_b"]) : "";
-                $resultado = concatenar_2_textos($valora, $valorb);
+                include_once('../Ejercicio14/Matriz.php');
+                $dimesion = isset($_POST['numero']) ? $_POST['numero'] : "";
+                $miMatriz = definirMatrix($dimesion);
 
-                echo "<br><br> Resultado: <span>$resultado </span>";
+                mostrarMatriz($miMatriz);
+                mostrarDiagonalPrincipal($miMatriz);
+                mostrarDiagonalSecundaria($miMatriz);
+                $total = sumarValoresMatriz($miMatriz);
 
+                echo "<br>Total de los valores de la matriz es: " . $total;
                 ?>
-            </form>
-        </article>
+            </article>
         </div>
     </section>
 </main>
 </body>
 </html>
-

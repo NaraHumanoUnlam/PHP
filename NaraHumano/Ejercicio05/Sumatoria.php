@@ -1,9 +1,14 @@
 <?php
 
 function mostrar_vector($array){
+    $count = 0;
     echo " El vector es: [";
     foreach ($array as $item){
-        echo  $item . " "  ;
+        if($count<2){
+            echo  $item . ", "  ;
+            $count++;
+        }else
+            echo $item ;
     }
     echo "]";
 }

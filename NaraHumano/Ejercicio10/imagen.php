@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nara Esther Humano</title>
-    <link rel="stylesheet" href="estilosEjercicio08.css">
+    <link rel="stylesheet" href="../Ejercicio08/estilosEjercicio08.css">
 </head>
 <body>
     <header>
@@ -19,7 +19,7 @@
                 <li><a href="../Ejercicio05/index.php">Ejercicio05</a></li>
                 <li><a href="../Ejercicio06/index.php">Ejercicio06</a></li>
                 <li><a href="../Ejercicio07/index.php">Ejercicio07</a></li>
-                <li><a href="index.php">Ejercicio08</a></li>
+                <li><a href="../Ejercicio08/index.php">Ejercicio08</a></li>
                 <li><a href="../Ejercicio09/index.php">Ejercicio09</a></li>
                 <li><a href="../Ejercicio10/index.php">Ejercicio10</a></li>
             </ul>
@@ -39,15 +39,16 @@
     </header>
     <main>
         <section>
-            <article>
-                <h1>Archivo</h1>
-                <iframe src="Programacio-n-web-2.pdf" width="100%" height="500px">
+            <article class="foto">
+                <?php
+                $nombre = isset($_GET["nombre"]) ? $_GET["nombre"] : "";
+                if($nombre!=""){
+                    echo "<img src='../Ejercicio09/Imagenes/{$nombre}' alt={$nombre}>";
 
-                </iframe>
+                }
+                ?>
             </article>
         </section>
     </main>
 </body>
 </html>
-<?php
-?>
